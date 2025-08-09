@@ -9,7 +9,8 @@ const userSchema=new mongoose.Schema({
         firstName:{
             type:String,
             required:true,
-            minlength:[3,"First name cannot be less than 3"]
+            minlength:[3,"First name cannot be less than 3"],
+            maxLength:[30,"Email is too long"]
         },
         lastName:{
              type:String,
@@ -37,7 +38,7 @@ const userSchema=new mongoose.Schema({
 
 
 userSchema.methods.getToken=function(){
-    const token=jwt.sign({_id:this._id},process.env.secret)
+    const token=jwt.sign({_id:this._id},process.env.secret,{expiresIn:"1d"})
     return token
 }
 

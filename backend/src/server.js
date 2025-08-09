@@ -15,7 +15,7 @@ const startTurbo=async()=>{
         await connectDB()
         console.log("Connected to server");
         
-        server.listen(port,()=>console.log(`${port}`))
+        server.listen(5001,()=>console.log(`${5001}`))
 }
 
 startTurbo()

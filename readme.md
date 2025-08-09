@@ -1,3 +1,6 @@
+new thing is select here that whether to add in query or not
+
+
 start backend then express and app.js 
 here make app then server is maked on http 
 here it is used dotenv + cors  chnage main file to server from app
@@ -24,3 +27,29 @@ then controller and in service folder make a service of make a user
     error from validationResult(req)
 
 
+
+
+now login then after user profile  with the help of middlewatre
+
+
+logout  blackist token 
+
+ ttl of 24 hours
+
+ ({
+    token:{
+        type:String,
+        require:true,
+        unique:true,
+    },
+    createdAt:
+    {
+        type:Date,
+        expries:86000,
+        default:Date.now
+    }
+ })
+
+ then logout user 
+
+ clear cookie + logout + then in middleware just check that the token is not blacklised
