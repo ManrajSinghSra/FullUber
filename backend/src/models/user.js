@@ -8,17 +8,23 @@ const userSchema=new mongoose.Schema({
     fullName:{
         firstName:{
             type:String,
+            trim:true,
+            
             required:true,
             minlength:[3,"First name cannot be less than 3"],
             maxLength:[30,"Email is too long"]
         },
         lastName:{
-             type:String,
-             minlength:[3,"First name cannot be less than 3"]
+              type:String,
+              trim:true,
+              
+              minlength:[3,"First name cannot be less than 3"]
         }
     },
     email:{
         type:String,
+         trim:true,
+         lowercase:true,
         unique:true,
         required:true,
         minlength:[5,"Valid email must be provides"]
